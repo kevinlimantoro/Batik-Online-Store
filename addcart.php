@@ -1,0 +1,12 @@
+<?php
+session_start();
+$product_id=$_REQUEST['id'];
+$price=$_REQUEST['price'];
+$_SESSION['cart'][$product_id]++;
+$_SESSION['price'][$product_id]=$price;
+if(isset($_SESSION['url'])){
+header("location:index.php?fromadd=1&url=".$_SESSION['url']);}
+else{
+header("location:index.php?fromadd=1");
+}
+?>
